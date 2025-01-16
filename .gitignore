@@ -1,0 +1,43 @@
+# Python virtual environment (for backend)
+backend/venv/
+
+# Node.js dependencies for frontend
+frontend/node_modules/
+
+# Build output for frontend
+frontend/build/
+
+# React-specific files that are auto-generated or not necessary
+frontend/README.md
+frontend/package-lock.json
+frontend/public/favicon.ico
+frontend/public/logo192.png
+frontend/public/logo512.png
+frontend/public/manifest.json
+frontend/public/robots.txt
+frontend/src/App.css
+frontend/src/App.js
+frontend/src/App.test.js
+frontend/src/index.css
+frontend/src/logo.svg
+frontend/src/reportWebVitals.js
+frontend/src/setupTests.js
+
+# General node_modules folder (if exists in root)
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+
+# Miscellaneous
+*.log
