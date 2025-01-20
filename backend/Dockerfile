@@ -4,18 +4,22 @@ FROM python:3.9-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container
+# Copy the requirements file into the container
+COPY backend/requirements.txt /app/
+
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application files
 COPY . /app/
 
-# Install dependencies
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
-# Set environment variables
-ENV DJANGO_SETTINGS_MODULE=myproject.settings
-
 # Expose the port the app runs on
-EXPOSE 8000
+EXPOSE 5000
 
-# Run the server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Set the environment variables
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
+
+# Run the Flask application
+CMD ["flask", "run"]
